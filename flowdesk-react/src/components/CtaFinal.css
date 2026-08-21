@@ -1,0 +1,80 @@
+.cta-final {
+  background-color: var(--c-text);
+  /* grid quadriculado escuro — linhas brancas com baixa opacidade */
+  background-image:
+    linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
+  background-size: 52px 52px;
+  padding: var(--sp-9) 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-final::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 80% at 50% 120%, rgba(37,99,235,.35) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 50% at 20% -20%, rgba(124,58,237,.2) 0%, transparent 55%),
+    /* apaga o grid nas bordas pra não ficar abrupto */
+    radial-gradient(ellipse 90% 50% at 50% 50%, transparent 40%, var(--c-text) 100%);
+  pointer-events: none;
+}
+
+.cta-inner {
+  max-width: 560px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.cta-inner h2    { color: #fff; margin-bottom: var(--sp-4); }
+.cta-inner > p   { margin-bottom: var(--sp-6); font-size: 1rem; color: rgba(255,255,255,.55); }
+
+.cta-actions {
+  display: flex;
+  gap: var(--sp-3);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: var(--sp-4);
+}
+
+.btn--cta-white {
+  background: #fff;
+  color: var(--c-text);
+  border: 1px solid transparent;
+  font-size: var(--f-body);
+  padding: 13px 26px;
+  border-radius: var(--r-3);
+  font-weight: 580;
+  transition: all var(--ease);
+}
+
+.btn--cta-white:hover {
+  background: #f0f0f0;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0,0,0,.25);
+}
+
+.btn--cta-ghost {
+  background: transparent;
+  color: rgba(255,255,255,.7);
+  border: 1px solid rgba(255,255,255,.2);
+  font-size: var(--f-body);
+  padding: 13px 26px;
+  border-radius: var(--r-3);
+  font-weight: 480;
+  transition: all var(--ease);
+}
+
+.btn--cta-ghost:hover {
+  border-color: rgba(255,255,255,.5);
+  color: #fff;
+}
+
+.cta-note { font-size: 0.71rem; color: rgba(255,255,255,.35); }
+
+@media (max-width: 560px) {
+  .cta-actions { flex-direction: column; align-items: stretch; }
+}

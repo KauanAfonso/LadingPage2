@@ -1,0 +1,40 @@
+.proof-bar {
+  padding: 22px 0;
+  border-top: 1px solid var(--c-border);
+  border-bottom: 1px solid var(--c-border);
+  background: var(--c-bg);
+}
+
+.proof-bar__label {
+  font-size: 0.68rem;
+  color: var(--c-text-3);
+  text-align: center;
+  margin-bottom: 14px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.proof-bar__logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
+}
+
+.proof-bar__logos span {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--c-border-2);
+  letter-spacing: .01em;
+  transition: color var(--ease-f);
+}
+
+.proof-bar__logos span:hover { color: var(--c-text-2); }
+
+@media (max-width: 560px) {
+  .proof-bar__logos { gap: 20px; }
+}
